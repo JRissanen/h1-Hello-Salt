@@ -50,48 +50,48 @@ __x) Lue ja tiivistä__
 
 # Saltin kokeilu tehtävät:
 
-  __a) Tiedoston luominen yksittäisellä komentorivillä (state.single)__
+__a) Tiedoston luominen yksittäisellä komentorivillä (state.single)__
 
-    - Käytetään komentoa: "sudo salt-call --local state.single file.managed /tmp/juliuswashere contents="Sisältö on oikea".
-    - Tiedoston voi tarkistaa siirtymällä tmp-hakemistoon ja avaamalla juliuswashere tiedoston jollain tekstieditorilla tai "cat" komennolla.
+- Käytetään komentoa: "sudo salt-call --local state.single file.managed /tmp/juliuswashere contents="Sisältö on oikea".
+- Tiedoston voi tarkistaa siirtymällä tmp-hakemistoon ja avaamalla juliuswashere tiedoston jollain tekstieditorilla tai "cat" komennolla.
 
-  __b) Salt idempotentti infrakoodina__
+__b) Salt idempotentti infrakoodina__
 
-    - Tehdään uusi hakemisto komennolla: "sudo mkdir /srv/salt/helloworld"
-    - Tehdään hakemistoon uusi init.sls tiedosto jollakin tekstieditorilla: "sudoedit init.sls"
-    - init.sls-tiedoston sisältö tulisi näyttää seuraavalta:
-      /tmp/helloworld:
-        file.managed:
-          - contents: "Hello World!"
-    - Ajetaan tiedosto komennolla: "sudo salt-call --local state.apply helloworld
-    - Tiedoston voi tarkistaa kuten a) kohdassa.
+- Tehdään uusi hakemisto komennolla: "sudo mkdir /srv/salt/helloworld"
+- Tehdään hakemistoon uusi init.sls tiedosto jollakin tekstieditorilla: "sudoedit init.sls"
+- init.sls-tiedoston sisältö tulisi näyttää seuraavalta:
+   /tmp/helloworld:
+      file.managed:
+        - contents: "Hello World!"
+- Ajetaan tiedosto komennolla: "sudo salt-call --local state.apply helloworld
+- Tiedoston voi tarkistaa kuten a) kohdassa.
 
-  __d) Tiedon kerääminen koneesta saltilla__
+__d) Tiedon kerääminen koneesta saltilla__
 
-    - Käytetään komentoa: "sudo salt-call --local grains.items.
-    - Aukeaa tiedosto täynnä infoa koneesta, ja sen avulla voi tarkistaa esimerkiksi:
-      - Cpu:n mallin
-      - Ip-osoitteen
-      - Käyttäjän nimen
-      - Serverin nimen
-      - Kernelin
-      - Käyttöjärjestelmän version
+- Käytetään komentoa: "sudo salt-call --local grains.items.
+- Aukeaa tiedosto täynnä infoa koneesta, ja sen avulla voi tarkistaa esimerkiksi:
+ - Cpu:n mallin
+ - Ip-osoitteen
+ - Käyttäjän nimen
+ - Serverin nimen
+ - Kernelin
+ - Käyttöjärjestelmän version
 
-  __e) Jokin muu tila kuin file.managed__
+__e) Jokin muu tila kuin file.managed__
 
-    - Ajattelin määrittää tilan, joka asentaa nano-tekstieditorin.
-    - Sama idea kuin b) kohdassa, mutta uuden hakemiston nimeksi nano.
-    - init.sls-tiedoston sisältö tulisi näyttää seuraavalta:
-      nano:
-        pkg.installed
-    - Tiedoston ajaessa terminaaliin tulostuu joko "ohjelma on jo asennettu, ei muutoksia", tai "asennus onnistui".
+- Ajattelin määrittää tilan, joka asentaa nano-tekstieditorin.
+- Sama idea kuin b) kohdassa, mutta uuden hakemiston nimeksi nano.
+- init.sls-tiedoston sisältö tulisi näyttää seuraavalta:
+    nano:
+      pkg.installed
+- Tiedoston ajaessa terminaaliin tulostuu joko "ohjelma on jo asennettu, ei muutoksia", tai "asennus onnistui".
 
 __Lähteet__
   
-  Palvelintenhallinta, terokarvinen.com: https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/?from=MoodleNews#h1-hello-salt
+Palvelintenhallinta, terokarvinen.com: https://terokarvinen.com/2022/palvelinten-hallinta-2022p2/?from=MoodleNews#h1-hello-salt
   
-  Command Line Basics Revisited, terokarvinen.com: https://terokarvinen.com/2020/command-line-basics-revisited/
+Command Line Basics Revisited, terokarvinen.com: https://terokarvinen.com/2020/command-line-basics-revisited/
   
-  Salt States – I Want My Computers Like This, terokarvinen.com: https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/
+Salt States – I Want My Computers Like This, terokarvinen.com: https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/
   
-  Raportin kirjoittaminen, terokarvinen.com: https://terokarvinen.com/2006/raportin-kirjoittaminen-4/?fromSearch=raportin%20kirjoittaminen
+Raportin kirjoittaminen, terokarvinen.com: https://terokarvinen.com/2006/raportin-kirjoittaminen-4/?fromSearch=raportin%20kirjoittaminen

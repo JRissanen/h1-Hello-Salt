@@ -59,10 +59,12 @@ __b) Salt idempotentti infrakoodina__
 
 - Tehdään uusi hakemisto komennolla: "sudo mkdir /srv/salt/helloworld"
 - Tehdään hakemistoon uusi init.sls tiedosto jollakin tekstieditorilla: "sudoedit init.sls"
-- init.sls-tiedoston sisältö tulisi näyttää seuraavalta:
+- init.sls-tiedoston sisältö tulisi näyttää seuraavalta: </br>
+  ```
    /tmp/helloworld:
       file.managed:
         - contents: "Hello World!"
+  ```
 - Ajetaan tiedosto komennolla: "sudo salt-call --local state.apply helloworld
 - Tiedoston voi tarkistaa kuten a) kohdassa.
 
@@ -70,20 +72,22 @@ __d) Tiedon kerääminen koneesta saltilla__
 
 - Käytetään komentoa: "sudo salt-call --local grains.items.
 - Aukeaa tiedosto täynnä infoa koneesta, ja sen avulla voi tarkistaa esimerkiksi:
- - Cpu:n mallin
- - Ip-osoitteen
- - Käyttäjän nimen
- - Serverin nimen
- - Kernelin
- - Käyttöjärjestelmän version
+  - Cpu:n mallin
+  - Ip-osoitteen
+  - Käyttäjän nimen
+  - Serverin nimen
+  - Kernelin
+  - Käyttöjärjestelmän version
 
 __e) Jokin muu tila kuin file.managed__
 
 - Ajattelin määrittää tilan, joka asentaa nano-tekstieditorin.
 - Sama idea kuin b) kohdassa, mutta uuden hakemiston nimeksi nano.
-- init.sls-tiedoston sisältö tulisi näyttää seuraavalta:
-    nano:
-      pkg.installed
+- init.sls-tiedoston sisältö tulisi näyttää seuraavalta: </br>
+  ```  
+  nano:
+    pkg.installed
+  ```
 - Tiedoston ajaessa terminaaliin tulostuu joko "ohjelma on jo asennettu, ei muutoksia", tai "asennus onnistui".
 
 __Lähteet__

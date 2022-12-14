@@ -4,7 +4,7 @@ __x) Lue ja tiivistä__
 
 ## Command Line Basics Revisited
 
-  Hyödyllisiä komentorivin komentoja:
+Hyödyllisiä komentorivin komentoja:
   - pwd -> Näyttää aktiivisen hakemiston.
   - ls -> Listaa hakemistossa olevat tiedostot.
   - cd /(hakemisto) -> Vaihtaa aktiivista hakemistoa.
@@ -13,32 +13,31 @@ __x) Lue ja tiivistä__
   - mv -> siirtää tiedoston, tai uudelleen nimeää sen.
   - rm (tiedoston nimi) -> poistaa tiedoston.
 
-  Ssh yhteyden muodostaminen onnnistuu kirjoittamalla käyttäjätunnuksen, sen jälkeen "@" merkin ja sitten serverinnimen. "ssh käyttäjätunnus@serverinnimi.com"
-  Ssh yhteyden saa lopetettua "exit" komennolla.
+Ssh yhteyden muodostaminen onnnistuu kirjoittamalla käyttäjätunnuksen, sen jälkeen "@" merkin ja sitten serverinnimen. "ssh käyttäjätunnus@serverinnimi.com"
+Ssh yhteyden saa lopetettua "exit" komennolla.
 
-  Avun ja lisäinfon etsiminen:
+Avun ja lisäinfon etsiminen:
   - (komento) --help -> Avaa järjestelmän sisäisen tiivistelmän komennon ominaisuuksista.
   - man (komento) -> Avaa järjestelmän sisäiset manuaalisivut, eli ohjekirjan komennolle.
 
-  Pääkäyttäjän oikeudet saa käyttöön "sudo" aloituksella ja käyttäjän salasanalla.
-  Hyödyllisiä sudo-komentoja:
+Pääkäyttäjän oikeudet saa käyttöön "sudo" aloituksella ja käyttäjän salasanalla. </br>
+Hyödyllisiä sudo-komentoja:
   - sudo apt-get update -> Tarkistaa onko käyttöjärjestelmälle saatavilla uutta päivitystä.
   - sudo apt-get upgrade -> Päivittää käyttöjärjestelmän.
   - sudo apt install (ohjelma) -> Lataa asentaa ohjelman.
 
 ## Salt States – I Want My Computers Like This
 
-  - Saltin avulla on mahdollista hallita useampaa konetta samanaikaisesti.
-  - Saltin toiminta perustuu "Master" ja "Slave" hierarkia rakenteeseen, jossa Master-kone antaa toimintaohjeita kaikille Slave-koneille.
-  - Master koneen määrittämät ohjeet Slave-koneille tallennetaan tiedostopolkuun "/srv/salt", joka käyttäjän on itse luotava.
-  - Slave-koneiden ohjeet ovat YAML-tiedostoja, ja niiden pääte on "".sls".
-  - Komennolla: "sudo salt '*' state.apply", voi ajaa tietyn tilan jokaiseen Slave-koneeseen.
-  - "top.sls"-nimisen tiedoston avulla voi määrittää vaiheita, joita Slave-koneet ajavat automaattisesti tietyin aikavälein.
+- Saltin avulla on mahdollista hallita useampaa konetta samanaikaisesti.
+- Saltin toiminta perustuu "Master" ja "Slave" hierarkia rakenteeseen, jossa Master-kone antaa toimintaohjeita kaikille Slave-koneille.
+- Master koneen määrittämät ohjeet Slave-koneille tallennetaan tiedostopolkuun "/srv/salt", joka käyttäjän on itse luotava.
+- Slave-koneiden ohjeet ovat YAML-tiedostoja, ja niiden pääte on "".sls".
+- Komennolla: "sudo salt '*' state.apply", voi ajaa tietyn tilan jokaiseen Slave-koneeseen.
+- "top.sls"-nimisen tiedoston avulla voi määrittää vaiheita, joita Slave-koneet ajavat automaattisesti tietyin aikavälein.
 
 ## Raportin kirjoittaminen
 
-  Hyvän raportoinnin ominaisuuksia ja vinkkejä:
-
+Hyvän raportoinnin ominaisuuksia ja vinkkejä:
   - Kannattaa kirjoittaa raporttia koko ajan tekiessä.
   - Kannattaa tehdä muistiinpanoja.
   - Ympäristö on hyvä huomioida, koska siitä käy ilmi raportin tulokset ja se mahdollistaa raportin toistamisen.
